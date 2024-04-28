@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import "./App.css";
 
 function App() {
+  const [index, setIndex] = useState(0);
+  function CountUp() {
+    setIndex(index + 1);
+  }
+  function CountReset() {
+    setIndex(0);
+  }
+  function linkClick(e) {
+    e.preventDefault();
+    alert("nyanchlポートフォリオへのリンクです");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>this is my portfolio</p>
+      <button onClick={CountUp}>touch</button>
+      <p>({index})</p>
+      <a href="https://nyanchl.github.io/portfolio/" onClick={linkClick}>nyanchlポートフォリオ</a>
+      <button onClick={CountReset}>reset</button>
     </div>
   );
 }
