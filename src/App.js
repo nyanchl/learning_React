@@ -19,7 +19,10 @@ function App() {
       <button onClick={CountUp}>touch</button>
       <p>({index})</p>
       <a href="https://nyanchl.github.io/portfolio/" onClick={linkClick}>nyanchlポートフォリオ</a>
-      <button onClick={CountReset}>reset</button>
+      <button onClick={CountReset} disabled>reset</button>
+      <form>
+        <textarea/>
+      </form>
     </div>
   );
 }
